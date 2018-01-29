@@ -1,0 +1,70 @@
+{
+  "name": "Chambre",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "numchambre": {
+      "type": "number",
+      "required": true
+    },
+    "nbremaxoccupants": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reservations": {
+      "type": "hasMany",
+      "model": "Reservation",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {
+    "reserver": {
+      "isStatic": false,
+      "accepts": [
+        {
+          "arg": "accountId",
+          "type": "string",
+          "required": true,
+          "description": "L'id du compte réservant une chambre"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "ok",
+          "type": "boolean",
+          "root": true,
+          "description": "Vérifier si la réservation a réussi"
+        },
+        {
+          "arg": "delai",
+          "type": "date",
+          "root": true,
+          "description": "Le delai limite pour la confirmation"
+        },
+        {
+          "arg": "erreur",
+          "type": "string",
+          "root": true,
+          "description": "Un code d'erreur durant la reservation"
+        }
+      ],
+      "description": "Réserver une position dans une chambre donnee",
+      "http": [
+        {
+          "path": "/reserverChambre",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

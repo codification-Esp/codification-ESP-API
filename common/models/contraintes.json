@@ -1,0 +1,26 @@
+{
+  "name": "Contraintes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "attribut": {
+      "type": "string",
+      "required": true
+    },
+    "valeur": {
+      "type": "string",
+      "required": true
+    },
+    "comparaison": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Batiment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombatiment": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "etages": {
+      "type": "hasMany",
+      "model": "Etage",
+      "foreignKey": "batiment_fk",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "contraintes": {
+      "type": "hasMany",
+      "model": "Contraintes",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

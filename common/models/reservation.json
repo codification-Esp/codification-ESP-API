@@ -1,0 +1,44 @@
+{
+  "name": "Reservation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "datereserv": {
+      "type": "date",
+      "required": true
+    },
+    "confirmation": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "position": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "chambre": {
+      "type": "belongsTo",
+      "model": "Chambre",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
