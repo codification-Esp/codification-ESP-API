@@ -8,6 +8,7 @@ module.exports = function(Chambre) {
 
 
 
+<<<<<<< HEAD
  /**
  * l'ensemble des codifiants dans une chambre donnée
  * 
@@ -34,6 +35,9 @@ module.exports = function(Chambre) {
       });
     });
   };
+=======
+
+>>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 
 
   /**
@@ -89,7 +93,11 @@ module.exports = function(Chambre) {
                 "codeReservation": randomstring.generate(7),
                 "idReservation":reserv.id
               }, function (err, code) {
+<<<<<<< HEAD
                 var url_confirmer = 'http://localhost:8080/confirmer-reservation?code='+code.codeReservation;
+=======
+                var url_confirmer = 'http://wwww.codification-esp.sn/confirmer-reservation?code='+code.codeReservation;
+>>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
                 const mail = {
                   from: 'codificationcoudesp@gmail.com', // addresse source
                   to: account.email, // adresse destinataire
@@ -99,6 +107,10 @@ module.exports = function(Chambre) {
                     <p>Vous pouvez confirmer en cliquant sur: <a href="${url_confirmer}">${url_confirmer}</a></p>
                     <p><strong>NB:</strong>Vous avez <strong>24h</strong> pour confirmer sinon votre reservation sera <strong>annulee automatiquement!</strong></p>`
                 };
+<<<<<<< HEAD
+=======
+                console.log(code);
+>>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
                 Chambre.app.models.Email.send(mail, function (err, info) {
                   if(err) {
                     console.log(err);

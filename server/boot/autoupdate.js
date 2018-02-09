@@ -30,6 +30,10 @@ module.exports = function(app) {
     }
     //TODO: change to autoUpdateAll when ready for CI deployment to production
     //autoMigrateAll();
+<<<<<<< HEAD
     autoUpdateAll();
+=======
+    //autoUpdateAll();
+>>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 
 };

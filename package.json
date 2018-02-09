@@ -8,7 +8,12 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
+<<<<<<< HEAD
     "posttest": "npm run lint && nsp check"
+=======
+    "posttest": "npm run lint && nsp check",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ../client/src/app/shared/sdk"
+>>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
   },
   "dependencies": {
     "compression": "^1.0.3",
