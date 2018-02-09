@@ -1,0 +1,164 @@
+{
+  "name": "Account",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "reservation": {
+      "type": "hasOne",
+      "model": "Reservation",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "etudiants": {
+      "type": "hasOne",
+      "model": "Etudiant",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "batimentsAccessibles"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "etagesAccessibles"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "couloirsAccessibles"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    }
+  ],
+  "methods": {
+    "batimentsAccessibles": {
+      "isStatic": false,
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "batiments",
+          "type": "array",
+          "root": true,
+          "description": "le tableau des batiments accessibles"
+        }
+      ],
+      "description": "Donne l'ensemble des batiments accessibles pour l'étudiant",
+      "http": [
+        {
+          "path": "/batiments_Accesibles",
+          "verb": "get"
+        }
+      ]
+    },
+    "etagesAccessibles": {
+      "isStatic": false,
+      "accepts": [
+        {
+          "arg": "batiment",
+          "type": "string",
+          "required": true,
+          "description": "L'id du batiment dans le quel on recherche des etages"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "etages",
+          "type": "string",
+          "root": true,
+          "description": "Le tableau des étages accessibles selon un batiment donné"
+        }
+      ],
+      "description": "Donne les etages qui sont accessibles dans un batiment donné",
+      "http": [
+        {
+          "path": "/etages_Accessibles",
+          "verb": "get"
+        }
+      ]
+    },
+    "confirmerReservation": {
+      "isStatic": false,
+      "accepts": [
+        {
+          "arg": "code",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ],
+      "returns": [
+        {
+          "arg": "ok",
+          "type": "boolean",
+          "root": true,
+          "description": "vérifier l'etat de la réservation"
+        }
+      ],
+      "description": "Permet de confirmer une reservation",
+      "http": [
+        {
+          "path": "/confirmer_Reservation",
+          "verb": "get"
+        }
+      ]
+    },
+    "chambresAccessibles": {
+      "isStatic": false,
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "batimentdispo",
+          "type": "object",
+          "root": true,
+          "description": "tableau des batiments disponibles inclus leurs etages et leurs chambres"
+        }
+      ],
+      "description": "retourne l'ensemble des batiments disponibles en y incluant les etages et les chambres pour un etudiant donne",
+      "http": [ 
+        {
+        "path": "/chambres_Accessibles",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

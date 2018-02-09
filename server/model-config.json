@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "mongodb",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "Etudiant": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Batiment": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Etage": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Chambre": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Contraintes": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "CodeReservation": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Email": {
+    "dataSource": "Email"
+  },
+  "Reservation": {
+    "dataSource": "mongodb",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "findById": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "PeriodeCodification": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Critere": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Echange": {
+    "dataSource": "mongodb",
+    "public": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "CodeReservation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idReservation": {
+      "type": "number",
+      "required": true
+    },
+    "codeReservation": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

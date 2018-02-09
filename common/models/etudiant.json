@@ -1,0 +1,49 @@
+{
+  "name": "Etudiant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "numEtudiant": {
+      "type": "string",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "dateNaiss": {
+      "type": "date",
+      "required": true
+    },
+    "villeNaiss": {
+      "type": "string"
+    },
+    "numCIN": {
+      "type": "string",
+      "required": true
+    },
+    "departement": {
+      "type": "string",
+      "required": true
+    },
+    "formation": {
+      "type": "string",
+      "required": true
+    },
+    "niveau": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

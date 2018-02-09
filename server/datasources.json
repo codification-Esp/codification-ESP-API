@@ -1,0 +1,39 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "host": "",
+    "port": 0,
+    "url": "",
+    "database": "db_codif",
+    "password": "",
+    "name": "mongodb",
+    "user": "",
+    "connector": "mongodb",
+    "connectTimeout": 10000000
+  },
+  "Email": {
+    "name": "Email",
+    "defaultForType": "mail",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "codificationcoudesp@gmail.com",
+          "pass": "passer2018"
+        }
+      }
+    ]
+  },
+  "sendmail": {
+    "name": "sendmail",
+    "connector": "loopback-connector-sendmail",
+    "silent": false
+  }
+}

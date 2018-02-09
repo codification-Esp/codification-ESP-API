@@ -1,0 +1,22 @@
+{
+  "name": "PeriodeCodification",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "datedebut": {
+      "type": "date",
+      "required": true
+    },
+    "datefin": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
