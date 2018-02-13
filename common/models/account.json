@@ -27,36 +27,24 @@
   },
   "acls": [
     {
-<<<<<<< HEAD
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "batimentsAccessibles"
-=======
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-<<<<<<< HEAD
       "property": "etagesAccessibles"
-=======
-      "property": "batimentsAccessibles"
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-<<<<<<< HEAD
       "property": "couloirsAccessibles"
     },
     {
@@ -65,16 +53,12 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "login"
-=======
-      "property": "etagesAccessibles"
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-<<<<<<< HEAD
       "property": "login"
     },
     {
@@ -83,15 +67,6 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "login"
-=======
-      "property": "couloirsAccessibles"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     }
   ],
   "methods": {
@@ -140,7 +115,6 @@
         }
       ]
     },
-<<<<<<< HEAD
     "confirmerReservation": {
       "isStatic": false,
       "accepts": [
@@ -149,21 +123,10 @@
           "type": "string",
           "required": true,
           "description": ""
-=======
-    "couloirsAccessibles": {
-      "isStatic": false,
-      "accepts": [
-        {
-          "arg": "etage",
-          "type": "string",
-          "required": true,
-          "description": "L'id de l'etage dans lequel on recherche des couloirs accessibles"
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
         }
       ],
       "returns": [
         {
-<<<<<<< HEAD
           "arg": "ok",
           "type": "boolean",
           "root": true,
@@ -174,23 +137,10 @@
       "http": [
         {
           "path": "/confirmer_Reservation",
-=======
-          "arg": "couloirs",
-          "type": "string",
-          "root": true,
-          "description": "Le tableau des couloirs accessibles de l'étage"
-        }
-      ],
-      "description": "Donne les couloirs qui sont accessibles pour un etage donné",
-      "http": [
-        {
-          "path": "/couloirs_Accessibles",
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
           "verb": "get"
         }
       ]
     },
-<<<<<<< HEAD
     "chambresAccessibles": {
       "isStatic": false,
       "accepts": [],
@@ -206,30 +156,6 @@
       "http": [ 
         {
         "path": "/chambres_Accessibles",
-=======
-    "confirmerReservation": {
-      "isStatic": false,
-      "accepts": [
-        {
-          "arg": "code",
-          "type": "string",
-          "required": true,
-          "description": ""
-        }
-      ],
-      "returns": [
-        {
-          "arg": "ok",
-          "type": "boolean",
-          "root": true,
-          "description": "vérifier l'etat de la réservation"
-        }
-      ],
-      "description": "Permet de confirmer une reservation",
-      "http": [
-        {
-          "path": "/confirmer_Reservation",
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
           "verb": "get"
         }
       ]

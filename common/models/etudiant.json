@@ -6,13 +6,10 @@
     "validateUpsert": true
   },
   "properties": {
-<<<<<<< HEAD
     "numEtudiant": {
       "type": "string",
       "required": true
     },
-=======
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     "prenom": {
       "type": "string",
       "required": true
@@ -28,13 +25,6 @@
     "villeNaiss": {
       "type": "string"
     },
-<<<<<<< HEAD
-=======
-    "numEtudiant": {
-      "type": "string",
-      "required": true
-    },
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
     "numCIN": {
       "type": "string",
       "required": true

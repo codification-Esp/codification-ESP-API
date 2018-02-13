@@ -1,17 +1,12 @@
 'use strict';
 
-<<<<<<< HEAD
 var config = require('../../server/config.json');
 var path = require('path');
-=======
-
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 module.exports = function(Account) {
  
   var app = require('../../server/server');
   var f = require('./my_scripts/functions');
 
-<<<<<<< HEAD
 //send verification email after registration
   Account.afterRemote('create', function(context, accountInstance, next) {
     console.log('> Account.afterRemote triggered');
@@ -54,8 +49,6 @@ module.exports = function(Account) {
   });
 
 
-=======
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 
 
 
@@ -80,11 +73,7 @@ module.exports = function(Account) {
                 while (i < b.length) {
                   if (f.testAllContraintes(etuds[0], b[i].contraintes())) {
                     var bat = {
-<<<<<<< HEAD
                       'nombatiment': b[i].nombatiment,
-=======
-                      'num': b[i].numbatiment,
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
                       'id': b[i].id
                     };
                     list.push(bat);
@@ -105,11 +94,7 @@ module.exports = function(Account) {
   Account.prototype.etagesAccessibles = function(batiment, callback) {
     var id = this.id;
     app.models.Etage.find(
-<<<<<<< HEAD
         {'where':{'batiment_fk':batiment},'include':'contraintes'},
-=======
-        {include: 'contraintes'},
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
         function(err, etages) {
           if (err) return callback(err);
           app.models.Etudiant.find(
@@ -135,7 +120,6 @@ module.exports = function(Account) {
   };
 
 /**
-<<<<<<< HEAD
  * retourne l'ensemble des batiments disponibles en y incluant les etages 
         et les chambres pour un etudiant donne
  * @param {Function(Error, object)} callback
@@ -202,40 +186,6 @@ Account.prototype.logements = function(callback) {
         });
     });
   };
-=======
- * renvoie les couloirs qui sont accessibles dans un etage donné
- * @param {string} batiment L'id de l'étage dans lequel on recherche des couloirs accessibles
- * @param {Function(Error, string)} callback
- */
-
-Account.prototype.couloirsAccessibles = function(etage,callback) {
-	var id = this.id;
-    app.models.Couloir.find(
-        {include: 'contraintes'},
-        function(err, couloirs) {
-          if (err) return callback(err);
-          app.models.Etudiant.find(
-              {'where': {'accountId': id}},
-              function(err, etuds) {
-                if (err) return callback(err);
-                var i = 0;
-                var list = [];
-                while (i < couloirs.length) {
-                  if (f.testAllContraintes(etuds[0], couloirs[i].contraintes())) {
-                    var e = {
-                      'numero': couloirs[i].numcouloir,
-                      'id': couloirs[i].id
-                    };
-                    list.push(e);
-                  }
-                  i++;
-                }
-                callback(null, list);
-              });
-        }
-    );
-};
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 
 
 /**

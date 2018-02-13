@@ -4,10 +4,7 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
-<<<<<<< HEAD
 require('events').EventEmitter.prototype._maxListeners = 100;
-=======
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
 
 app.start = function() {
   // start the web server

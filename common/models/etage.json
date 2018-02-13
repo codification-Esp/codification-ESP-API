@@ -13,15 +13,9 @@
   },
   "validations": [],
   "relations": {
-<<<<<<< HEAD
     "chambres": {
       "type": "hasMany",
       "model": "Chambre",
-=======
-    "coulois": {
-      "type": "hasMany",
-      "model": "Couloir",
->>>>>>> 875c9ae18388acd3b97e52685b40db92af681f09
       "foreignKey": "",
       "options": {
         "nestRemoting": true
